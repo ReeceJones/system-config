@@ -6,6 +6,7 @@ set softtabstop=4
 set expandtab
 set cc=+1
 set colorcolumn=120,80
-hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 set list
+set nu
 set listchars=trail:_
