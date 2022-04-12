@@ -1,0 +1,15 @@
+
+# run a command until it fails. dump the output of the failed run to failure.log
+function until_failure() {
+    i=1
+    echo -e "FAILURE ATTEMPT $i"
+    rt=$("$@")
+    while [[ $? -eq 0 ]]; do
+        i=$(expr $i + 1)
+        echo -e "\e[1AFAILURE ATTEMPT $i"
+        rt=$("$@");
+    done;
+    echo "FAILED ON ATTEMPT $i"
+    echo "$rt" > failure.log
+}
+
